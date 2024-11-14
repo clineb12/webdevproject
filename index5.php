@@ -38,6 +38,8 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
     $search_results = $search_stmt->fetchAll();
 }
 
+//something
+
 // Handle form submissions
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['author']) && isset($_POST['title']) && isset($_POST['publisher'])) {
