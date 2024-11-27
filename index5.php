@@ -83,7 +83,7 @@ $stmt = $pdo->query($sql);
         
         <!-- Search moved to hero section -->
         <div class="hero-search">
-            <h2>Search for a Book to Ban</h2>
+            <h2>Explore the Database</h2>
             <form action="" method="GET" class="search-form">
                 <label for="search">Search by Title:</label>
                 <input type="text" id="search" name="search" required>
@@ -98,9 +98,10 @@ $stmt = $pdo->query($sql);
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Author</th>
+                                    <th>Form</th>
+                                    <th>Subgenre</th>
                                     <th>Title</th>
-                                    <th>Publisher</th>
+                                    <th>Release Year</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -108,13 +109,14 @@ $stmt = $pdo->query($sql);
                                 <?php foreach ($search_results as $row): ?>
                                 <tr>
                                     <td><?php echo htmlspecialchars($row['id']); ?></td>
-                                    <td><?php echo htmlspecialchars($row['author']); ?></td>
+                                    <td><?php echo htmlspecialchars($row['form']); ?></td>
+                                    <td><?php echo htmlspecialchars($row['subgenre']); ?></td>
                                     <td><?php echo htmlspecialchars($row['title']); ?></td>
-                                    <td><?php echo htmlspecialchars($row['publisher']); ?></td>
+                                    <td><?php echo htmlspecialchars($row['releaseyear']); ?></td>
                                     <td>
                                         <form action="index5.php" method="post" style="display:inline;">
                                             <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
-                                            <input type="submit" value="Ban!">
+                                            <input type="submit" value="Whoops!">
                                         </form>
                                     </td>
                                 </tr>
@@ -136,9 +138,10 @@ $stmt = $pdo->query($sql);
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Author</th>
+                    <th>Form</th>
+                    <th>Subgenre</th>
                     <th>Title</th>
-                    <th>Publisher</th>
+                    <th>Release Year</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -146,13 +149,14 @@ $stmt = $pdo->query($sql);
                 <?php while ($row = $stmt->fetch()): ?>
                 <tr>
                     <td><?php echo htmlspecialchars($row['id']); ?></td>
+                    <td><?php echo htmlspecialchars($row['form']); ?></td>
                     <td><?php echo htmlspecialchars($row['author']); ?></td>
                     <td><?php echo htmlspecialchars($row['title']); ?></td>
                     <td><?php echo htmlspecialchars($row['publisher']); ?></td>
                     <td>
                         <form action="index5.php" method="post" style="display:inline;">
                             <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
-                            <input type="submit" value="Ban!">
+                            <input type="submit" value="Whoops!">
                         </form>
                     </td>
                 </tr>
@@ -163,18 +167,21 @@ $stmt = $pdo->query($sql);
 
     <!-- Form section with container -->
     <div class="form-container">
-        <h2>Condemn a Book Today</h2>
+        <h2>Unearth the Unknown</h2>
         <form action="index5.php" method="post">
-            <label for="author">Author:</label>
-            <input type="text" id="author" name="author" required>
+            <label for="form">Form:</label>
+            <input type="text" id="form" name="form" required>
+            <br><br>
+            <label for="subgenre">Subgenre:</label>
+            <input type="text" id="subgenre" name="subgenre" required>
             <br><br>
             <label for="title">Title:</label>
             <input type="text" id="title" name="title" required>
             <br><br>
-            <label for="publisher">Publisher:</label>
-            <input type="text" id="publisher" name="publisher" required>
+            <label for="releaseyear">Release Year:</label>
+            <input type="int" id="releaseyear" name="releaseyear" required>
             <br><br>
-            <input type="submit" value="Condemn Book">
+            <input type="submit" value="Expand our Knowledge">
         </form>
     </div>
 </body>
