@@ -32,7 +32,7 @@ try {
 $search_results = null;
 if (isset($_GET['search']) && !empty($_GET['search'])) {
     $search_term = '%' . $_GET['search'] . '%';
-    $search_sql = 'SELECT id, form, subgenre, title, releaseyear FROM media WHERE title LIKE :search';
+    $search_sql = 'SELECT form, subgenre, title, releaseyear FROM media WHERE title LIKE :search';
     $search_stmt = $pdo->prepare($search_sql);
     $search_stmt->execute(['search' => $search_term]);
     $search_results = $search_stmt->fetchAll();
@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $form = htmlspecialchars($_POST['form']);
         $subgenre = htmlspecialchars($_POST['subgenre']);
         $title = htmlspecialchars($_POST['title']);
-        $releaseyear = htmlspecialchars($POST['releaseyear']);
+        $releaseyear = htmlspecialchars($_POST['releaseyear']);
 
         
         $insert_sql = 'INSERT INTO media (form, subgenre, title, releaseyear) VALUES (:form, :subgenre, :title, :releaseyear)';
@@ -78,8 +78,8 @@ $stmt = $pdo->query($sql);
 <body>
     <!-- Hero Section -->
     <div class="hero-section">
-        <h1 class="hero-title">Nightmare Nexus: Escape the Ordinary, Embrace the Macabre</h1>
-        <p class="hero-subtitle">"A"</p>
+        <h1 class="hero-title">Nightmare Nexus</h1>
+        <p class="hero-subtitle">"Escape the Ordinary, Embrace the Macabre"</p>
         
         <!-- Search moved to hero section -->
         <div class="hero-search">
@@ -150,9 +150,9 @@ $stmt = $pdo->query($sql);
                 <tr>
                     <td><?php echo htmlspecialchars($row['id']); ?></td>
                     <td><?php echo htmlspecialchars($row['form']); ?></td>
-                    <td><?php echo htmlspecialchars($row['author']); ?></td>
+                    <td><?php echo htmlspecialchars($row['subgenre']); ?></td>
                     <td><?php echo htmlspecialchars($row['title']); ?></td>
-                    <td><?php echo htmlspecialchars($row['publisher']); ?></td>
+                    <td><?php echo htmlspecialchars($row['releaseyear']); ?></td>
                     <td>
                         <form action="index5.php" method="post" style="display:inline;">
                             <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
