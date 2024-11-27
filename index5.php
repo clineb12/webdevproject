@@ -78,7 +78,7 @@ $stmt = $pdo->query($sql);
 <body>
     <!-- Hero Section -->
     <div class="hero-section">
-        <h1 class="hero-title">Nightmare Nexus</h1>
+        <h1 class="hero-title">Nightmare Nexus: Escape the Ordinary, Embrace the Macabre</h1>
         <p class="hero-subtitle">"A"</p>
         
         <!-- Search moved to hero section -->
