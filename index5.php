@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 // Get all media for main table
-$sql = 'SELECT id, author, title, publisher FROM media';
+$sql = 'SELECT id, form, subgenre, title, releaseyear FROM media';
 $stmt = $pdo->query($sql);
 ?>
 
@@ -72,14 +72,14 @@ $stmt = $pdo->query($sql);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Betty's Book Banning and Bridge Building</title>
+    <title>Nightmare Nexus</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Hero Section -->
     <div class="hero-section">
-        <h1 class="hero-title">Betty's Book Banning and Bridge Building</h1>
-        <p class="hero-subtitle">"Because nothing brings a community together like collectively deciding what others shouldn't read!"</p>
+        <h1 class="hero-title">Nightmare Nexus</h1>
+        <p class="hero-subtitle">"A"</p>
         
         <!-- Search moved to hero section -->
         <div class="hero-search">
