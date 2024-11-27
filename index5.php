@@ -50,9 +50,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $releaseyear = htmlspecialchars($POST['releaseyear']);
 
         
-        $insert_sql = 'INSERT INTO media (author, title, publisher) VALUES (:author, :title, :publisher)';
+        $insert_sql = 'INSERT INTO media (form, subgenre, title, releaseyear) VALUES (:form, :subgenre, :title, :releaseyear)';
         $stmt_insert = $pdo->prepare($insert_sql);
-        $stmt_insert->execute(['author' => $author, 'title' => $title, 'publisher' => $publisher]);
+        $stmt_insert->execute(['form' => $form, 'subgenre' => $subgenre, 'title' => $title, 'releaseyear' => $releaseyear]);
     } elseif (isset($_POST['delete_id'])) {
         // Delete an entry
         $delete_id = (int) $_POST['delete_id'];
