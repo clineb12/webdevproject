@@ -32,7 +32,7 @@ try {
 $search_results = null;
 if (isset($_GET['search']) && !empty($_GET['search'])) {
     $search_term = '%' . $_GET['search'] . '%';
-    $search_sql = 'SELECT form, subgenre, title, releaseyear FROM media WHERE title LIKE :search';
+    $search_sql = 'SELECT id, form, subgenre, title, releaseyear FROM media WHERE title LIKE :search';
     $search_stmt = $pdo->prepare($search_sql);
     $search_stmt->execute(['search' => $search_term]);
     $search_results = $search_stmt->fetchAll();
@@ -108,7 +108,7 @@ $stmt = $pdo->query($sql);
                             <tbody>
                                 <?php foreach ($search_results as $row): ?>
                                 <tr>
-                                    <td><?php echo htmlspecialchars($row['id']); ?></td>
+                                    
                                     <td><?php echo htmlspecialchars($row['form']); ?></td>
                                     <td><?php echo htmlspecialchars($row['subgenre']); ?></td>
                                     <td><?php echo htmlspecialchars($row['title']); ?></td>
