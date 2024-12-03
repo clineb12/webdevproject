@@ -108,7 +108,7 @@ $stmt = $pdo->query($sql);
                             <tbody>
                                 <?php foreach ($search_results as $row): ?>
                                 <tr>
-                                    
+                                    <td><?php echo htmlspecialchars($row['id']); ?></td>
                                     <td><?php echo htmlspecialchars($row['form']); ?></td>
                                     <td><?php echo htmlspecialchars($row['subgenre']); ?></td>
                                     <td><?php echo htmlspecialchars($row['title']); ?></td>
