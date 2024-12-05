@@ -25,8 +25,7 @@ a:hover {
 }
 
 button {
-    background-color: #B22222;
-    color: #F8F8FF;
+    
     border: none;
     padding: 10px 15px;
     cursor: pointer;
@@ -132,6 +131,8 @@ input[type="text"] {
 }
 
 input[type="submit"] {
+    background-color: #B22222;
+    color: #F8F8FF;
     margin-top: 10px;
     padding: 5px 15px;
     cursor: pointer;
