@@ -70,14 +70,14 @@ $stmt = $pdo->query($sql);
 <head>
     <meta charset="UTF-8">
     <title>Nightmare Nexus</title>
- 
+    <link rel="stylesheet" href="stylesnew.css">
 </head>
 <body>
     <!-- Hero Section -->
     <div class="hero-section">
         <h1 class="hero-title">Nightmare Nexus</h1>
         <p class="hero-subtitle">"Escape the Ordinary, Embrace the Macabre"</p>
-        <h4 class="hero-option"><a href="about.html">About</a> <a href="admin.php">Admin</a> <a href="index5.php">Nexus</a></h4>
+        <h4 class="hero-option"><a href="about.html">About</a> ~~~~ <a href="index5.php">Nexus</a> ~~~~ <a href="admin.php">Admin</a></h4>
 </div>
 <div class="table-container">
         <h2>Current Users</h2>

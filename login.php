@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Login - Nightmare Nexus</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stylesnew.css">
 </head>
 <body>
     <div class="auth-container">

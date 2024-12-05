@@ -15,7 +15,7 @@ p {
 /*used chat gpt to creat a more cohesive color style*/
 
 a {
-    color: #B22222;
+    color: #FF4500;
     text-decoration: none;
 }
 
@@ -37,7 +37,7 @@ button:hover {
 }
 
 a:visited {
-    color: crimson; 
+    color: #FF4500; 
 }
 
 .table-container {
