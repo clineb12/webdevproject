@@ -28,7 +28,7 @@ $options = [
 <head>
     <meta charset="UTF-8">
     <title>Nightmare Nexus</title>
-    <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
     <!-- Hero Section -->
