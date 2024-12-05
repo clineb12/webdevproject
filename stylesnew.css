@@ -1,28 +1,43 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #492121;
-    color: #e4c4c4;
+    background-color: #0B0C10;
+    color: #F8F8FF; /* Ivory White for text */
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
+p {
+    color: #B2B2B2; /* Subtle text */
+}
+
+/*had to make a new style sheet because the other was bugged?*/
+/*used chat gpt to creat a more cohesive color style*/
+
 a {
-    color: red;
+    color: #B22222;
     text-decoration: none;
 }
 
 a:hover {
-    color: darkred;
+    color: #8B0000; /* Blood Red */
     text-decoration: underline;
 }
 
-a:visited {
-    color: maroon;
+button {
+    background-color: #B22222;
+    color: #F8F8FF;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
 }
 
-a:active {
-    color: crimson;
+button:hover {
+    background-color: #FF4500; /* Burnt Orange */
+}
+
+a:visited {
+    color: crimson; 
 }
 
 .table-container {
@@ -40,9 +55,10 @@ a:active {
 
 .hero-title {
     font-size: 2.5em;
-    color: #fb0707;
+    color: #FF8C00;
     margin-bottom: 15px;
 }
+
 
 .hero-subtitle {
     font-size: 1.2em;
@@ -55,17 +71,17 @@ a:active {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #414040;
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 .hero-section {
-    background-color: #fff;
+    background-color: #363636;
     padding: 40px 20px;
     margin: -20px -20px 40px -20px; /* Negative margin to stretch full width */
     text-align: center;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #2d2d2d;
 }
 
 .table-container {
@@ -121,8 +137,9 @@ input[type="submit"] {
     cursor: pointer;
 }
 
-h1, h2 {
+h1, h2, h3 {
     margin-bottom: 20px;
+    color: #FF4500;
 }
 
 .search-container {
