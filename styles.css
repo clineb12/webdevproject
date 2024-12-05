@@ -137,12 +137,25 @@ h1, h2 {
     font-weight: 200;
 
 }
-
-a:link {
+/* I used chatgpt to help me change my link colors*/
+a {
     color: red;
+    text-decoration: none;
 }
 
-/* Rest of your existing styles remain unchanged */
+a:hover {
+    color: darkred;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: maroon;
+}
+
+a:active {
+    color: crimson;
+}
+
 .table-container {
     width: 100%;
     overflow: hidden;
