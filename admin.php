@@ -28,20 +28,41 @@ try {
     throw new PDOException($e->getMessage(), (int)$e->getCode());
 }
 
+// Handle book search
+$search_results = null;
+if (isset($_GET['search']) && !empty($_GET['search'])) {
+    $search_term = '%' . $_GET['search'] . '%';
+    $search_sql = 'SELECT id, username FROM users WHERE username LIKE :search';
+    $search_stmt = $pdo->prepare($search_sql);
+    $search_stmt->execute(['search' => $search_term]);
+    $search_results = $search_stmt->fetchAll();
+}
+
+//something
+
+// Handle form submissions
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-     if (isset($_POST['delete_id'])) {
+    if (isset($_POST['form'])) {
+        // Insert new entry
+        $form = htmlspecialchars($_POST['username']);
+
+        
+        $insert_sql = 'INSERT INTO users (username) VALUES (:username)';
+        $stmt_insert = $pdo->prepare($insert_sql);
+        $stmt_insert->execute(['username' => $username, 'subgenre' => $subgenre, 'title' => $title, 'releaseyear' => $releaseyear]);
+    } elseif (isset($_POST['delete_id'])) {
         // Delete an entry
         $delete_id = (int) $_POST['delete_id'];
         
-        $delete_sql = 'DELETE FROM admin WHERE id = :id';
+        $delete_sql = 'DELETE FROM users WHERE id = :id';
         $stmt_delete = $pdo->prepare($delete_sql);
         $stmt_delete->execute(['id' => $delete_id]);
     }
-
-    $sql = 'SELECT id, username, password FROM admin';
-    $stmt = $pdo->query($sql);
 }
 
+// Get all media for main table
+$sql = 'SELECT id, username, password FROM users';
+$stmt = $pdo->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +86,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <tr>
                     <th>ID</th>
                     <th>Username</th>
-                    <th>Password</th>
                 </tr>
             </thead>
             <tbody>
@@ -73,7 +93,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <tr>
                     <td><?php echo htmlspecialchars($row['id']); ?></td>
                     <td><?php echo htmlspecialchars($row['username']); ?></td>
-                    <td><?php echo htmlspecialchars($row['password']); ?></td>
                     <td>
                         <form action="admin.php" method="post" style="display:inline;">
                             <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
