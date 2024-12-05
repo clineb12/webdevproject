@@ -80,7 +80,7 @@ $stmt = $pdo->query($sql);
     <div class="hero-section">
         <h1 class="hero-title">Nightmare Nexus</h1>
         <p class="hero-subtitle">"Escape the Ordinary, Embrace the Macabre"</p>
-        <h4 class="hero-option"><a href="about.php">About</a> <a href="admin.php">Admin</a></h4>
+        <h4 class="hero-option"><a href="about.html">About</a> <a href="admin.php">Admin</a></h4>
         
         <!-- Search moved to hero section -->
         <div class="hero-search">
