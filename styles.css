@@ -131,6 +131,17 @@ h1, h2 {
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
+.hero-option {
+    font-size: 5%;
+    margin-bottom: 30px;
+    font-weight: 200;
+
+}
+
+a{
+    color: red;
+}
+
 /* Rest of your existing styles remain unchanged */
 .table-container {
     width: 100%;
