@@ -213,10 +213,11 @@ h1, h3 {
 
 .flex-container {
     padding-top: 10px;
-    background-color: #650000;
+    background-color: #363636;
     margin: 20px;
     border-radius: 10px;
     display: flex;
+    flex-wrap: wrap;
     align-items: stretch;
     gap: 20px;
 }
@@ -226,9 +227,31 @@ img{
 }
 
 .flex-item {
+    background-color: #650000;
     border-radius: 20px;
     display: flex;
     justify-content: flex-end;
     padding: 20px;
     font-size: 1rem;
+    flex: 1;
 }
+
+.flex-item1 {
+    border-radius: 20px;
+    background-color: rgb(121, 0, 59);
+    
+    justify-content: flex-end;
+    padding: 20px;
+    font-size: 1rem;
+    flex: 1;
+}
+.text-content{
+    flex: 1;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+}
+
