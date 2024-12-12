@@ -78,7 +78,7 @@ a:visited {
 .hero-section {
     background-color: #363636;
     padding: 40px 20px;
-    margin: -20px -20px 40px -20px; /* Negative margin to stretch full width */
+    margin: -20px -20px 10px -20px; /* Negative margin to stretch full width */
     text-align: center;
     border-bottom: 1px solid #2d2d2d;
 }
@@ -131,8 +131,9 @@ input[type="text"] {
 }
 
 .hero-section2{
-    background-color: orange;
-    color: #B2B2B2;
+    background-color: rgb(250, 162, 39);
+    margin-top: 0;
+    color: #fbeded !important;
     text-align: center;
     padding: 20px;
 }
@@ -151,7 +152,7 @@ h1, h2, h3 {
 }
 
 .register-button {
-    background-color: orange; /* Button background color */
+    background-color: rgb(253, 218, 157); /* Button background color */
     color: white; /* Text color */
     text-decoration: none; /* Remove underline */
     padding: 20px 40px; /* Add significant padding for box effect */
@@ -167,7 +168,7 @@ h1, h2, h3 {
 }
 
 .register-button:hover {
-    background-color: rgb(247, 190, 146); /* Change color on hover */
+    background-color: rgb(249, 161, 94); /* Change color on hover */
 }
 /*chatgpt copy and paste to edit the button for the CTA*/
 .search-container {
