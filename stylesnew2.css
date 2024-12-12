@@ -213,15 +213,22 @@ h1, h3 {
 
 .flex-container {
     padding-top: 10px;
-    background-color: #394a90;
+    background-color: #650000;
     margin: 20px;
     border-radius: 10px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     align-items: stretch;
     gap: 20px;
 }
 
+img{
+    border-radius: 20px;
+}
+
 .flex-item {
-    
+    border-radius: 20px;
+    background-color: #ddd;
+    justify-content: space-evenly;
+    padding: 20px;
 }
