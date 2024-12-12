@@ -47,9 +47,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $form = htmlspecialchars($_POST['username']);
 
         
-        $insert_sql = 'INSERT INTO users (username) VALUES (:username)';
+        $insert_sql = 'INSERT INTO users (username, password) VALUES (:username, :password)';
         $stmt_insert = $pdo->prepare($insert_sql);
-        $stmt_insert->execute(['username' => $username, 'subgenre' => $subgenre, 'title' => $title, 'releaseyear' => $releaseyear]);
+        $stmt_insert->execute(['username' => $username, 'password' => $password]);
     } elseif (isset($_POST['delete_id'])) {
         // Delete an entry
         $delete_id = (int) $_POST['delete_id'];

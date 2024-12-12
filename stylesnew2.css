@@ -146,6 +146,14 @@ input[type="submit"] {
     cursor: pointer;
 }
 
+.register-button1 {
+    background-color: #B22222;
+    color: #F8F8FF;
+    margin-top: 10px;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
 h2 {
     color: #fef2e1;
 }
@@ -244,6 +252,7 @@ img{
     font-size: 1rem;
     flex: 1;
 }
+
 .text-content{
     flex: 1;
 }

@@ -26,6 +26,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 }
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['form'])) {
+        // Insert new entry
+        $form = htmlspecialchars($_POST['username']);
+
+        
+        $insert_sql = 'INSERT INTO users (username, password) VALUES (:username, :password)';
+        $stmt_insert = $pdo->prepare($insert_sql);
+        $stmt_insert->execute(['username' => $username, 'password' => $password]);
+    } elseif (isset($_POST['delete_id'])) {
+        // Delete an entry
+        $delete_id = (int) $_POST['delete_id'];
+        
+        $delete_sql = 'DELETE FROM users WHERE id = :id';
+        $stmt_delete = $pdo->prepare($delete_sql);
+        $stmt_delete->execute(['id' => $delete_id]);
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <div class="auth-container">
-        <h1>Register</h1>
+        <center><h1>Register</h1>
         <?php if ($error_message): ?>
             <div class="error"><?php echo htmlspecialchars($error_message); ?></div>
         <?php endif; ?>
@@ -45,20 +64,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="success"><?php echo htmlspecialchars($success_message); ?></div>
         <?php endif; ?>
         
-        <form method="POST" action="" class="auth-form">
+        <form method="POST" action="register.php" class="auth-form">
             <div>
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
             </div>
+            <br>
             <div>
-                <label for="password">Password:</label>
+                <label for="password">Password: </label>
                 <input type="password" id="password" name="password" required>
             </div>
+            <br>
             <div>
-                <label for="confirm_password">Confirm Password:</label>
+                <label for="confirm_password">Confirm Password: </label>
                 <input type="password" id="confirm_password" name="confirm_password" required>
             </div>
-            <button type="submit" name="register">Register</button>
+            <br>
+            <button class="register-button1" type="submit" name="register">Register</button>
         </form>
         <p>Already have an account? <a href="login.php">Login here</a></p>
     </div>
