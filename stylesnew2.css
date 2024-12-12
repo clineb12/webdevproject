@@ -212,5 +212,16 @@ h1, h3 {
 }
 
 .flex-container {
-    display: flexbox;
+    padding-top: 10px;
+    background-color: #394a90;
+    margin: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.flex-item {
+    
 }
